@@ -1,3 +1,5 @@
 # my-master-thesis
-Skeleton repository for a Master thesis project
+All the files for my Master thesis on "Yakshaving"
+
+(c) 2015 Phineas Poopenberger
 
