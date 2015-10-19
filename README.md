@@ -1,5 +1,5 @@
 # my-master-thesis
-All the files for my Master thesis on "Yakshaving"
+All the files for my Master thesis on Graph databases
 
-(c) 2015 Phineas Poopenberger
+(c) 2015 Frederik Schmitt
 
