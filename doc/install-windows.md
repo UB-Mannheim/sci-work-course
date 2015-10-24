@@ -15,6 +15,8 @@ We recommend:
 * [MikTeX distribution](http://miktex.org/). This is a widely used distribution for Windows. It is comparatively small in size (150 MB) and bundles a package manager to download additional styles on-demand.
 * [TeXnicCenter](http://www.texniccenter.org/). This is a very powerful and complete LaTeX authoring environment.
 
+Tip: *Install first the distribution and then the editor.*
+
 MikTeX
 ------
 
