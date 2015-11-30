@@ -79,9 +79,9 @@ Test Installation
 Now, we want to run a test:
 
 - Open TeXnicCenter
-- Select the `Open File` menu 
-- Choose the `ExampleLaTeX\testDocument.tex` we provide (check that bib-file is also
-in that directory) 
+- Select the `Open File` menu
+- Choose the [LatexExample\testDocument.tex](./LatexExample/testDocument.tex)
+  we provide (check that bib-file is also in that directory)
 - Switch to *LaTeX => PDF* and build the active document (Press `Ctrl+F7`):
 
 ![TeXnicCenter exec](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/windows/texnikcenter.png)
