@@ -29,4 +29,3 @@ sudo apt-get install texmaker
 TexLive
 -------
 Go to the [TexLive Distribution](https://www.tug.org/texlive/) website in any browser and click on the download link in the first item:
-
