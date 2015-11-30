@@ -29,3 +29,18 @@ sudo apt-get install texmaker
 TexLive
 -------
 Go to the [TexLive Distribution](https://www.tug.org/texlive/) website in any browser and click on the download link in the first item:
+
+![TexLive Website Download](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/linux/linux-texlive-download-01.png)
+
+This should open a new page with the available download options:
+
+![TexLive Website Download 2](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/linux/linux-texlive-download-02.png)
+
+Klick on the link for the archive file for linux "install-tl-unx.tar.gz(3.3mb)" to download the package.
+
+If the download isn't starting, reload this page until you hit a working mirror.
+
+Once download has finished, open your downloads folder and unpack install-tl-unx.tar.gz to any direction.
+
+![TexLive archive unpacking](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/linux/linux-texlive-download-02.png)
+
