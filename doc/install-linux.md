@@ -78,6 +78,9 @@ Klick on the checkbox next to `texmaker` and select `Marc for installation`. The
 
 ![TexMaker Installation via Synaptic](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/linux/linux-texmaker-synaptic-02.png)
 
+Finally, open TexMaker and then the Preferences through `Options` --> `Configure TexMaker` and click on the second tab `Quick Build`. Select the second option for `Quick Build Command`. This will make TexMaker execute all the necessary steps to fully rebuild your document when you click the Build button.
+
+![Texmaker settings](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/linux/linux-texmaker-config.png)
 
 ###Installation via manual Download
 
