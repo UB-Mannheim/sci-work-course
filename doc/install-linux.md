@@ -99,20 +99,6 @@ Open the file with your Software Center and in there click on `install`. You wil
 
 TexMaker will be installed.
 
-![Finder Ctrl Click](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/macosx/texmaker-unsigned-context-menu.png)
+Finally, open TexMaker and then the Preferences through `Options` --> `Configure TexMaker` and click on the second tab `Quick Build`. Select the second option for `Quick Build Command`. This will make TexMaker execute all the necessary steps to fully rebuild your document when you click the Build button.
 
-You should now see this dialog:
-
-![Texmaker Confirm Exec](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/macosx/texmaker-macos-confirm-exec.png)
-
-If you see the following dialog, you did not **ctrl-click** on `texmaker`.
-
-![Texmaker Exec error](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/macosx/texmaker-unsigned-error.png)
-
-Add the Texmaker icon to the dock so you'll find it later.
-
-Finally, open the Preferences in Texmaker and select the second option for
-`Quick Build Command`. This will make Texmaker execute all the necessary steps to
-fully rebuild your document when you click the Build button.
-
-![Texmaker settings](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/macosx/macosx-texmaker-settings.png)
+![Texmaker settings](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/linux/linux-texmaker-config.png)
