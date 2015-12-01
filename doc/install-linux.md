@@ -34,7 +34,7 @@ If you run a Ubuntu or Xubuntu system, you can install TexLive with Synaptic Pac
 
 ![TexLive Installation via Synaptic](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/linux/linux-texlive-synaptic-01.png)
 
-Klick on the checkbox next to `texlive` and select `Marc for installation`. Then klick on the `apply` button above. A new window appears. Klick again on `Apply` to start the installation.
+Click on the checkbox next to `texlive` and select `Mark for installation`. Then click on the `apply` button above. A new window appears. Click again on `Apply` to start the installation.
 
 ![TexLive Installation via Synaptic](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/linux/linux-texlive-synaptic-02.png)
 
@@ -50,7 +50,7 @@ This should open a new page with the available download options:
 
 ![TexLive Website Download 2](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/linux/linux-texlive-download-02.png)
 
-Klick on the link for the archive file for linux `install-tl-unx.tar.gz`(3.3mb) to download the package.
+Click on the link for the archive file for linux `install-tl-unx.tar.gz`(3.3mb) to download the package.
 
 If the download isn't starting, reload this page until you hit a working mirror.
 
@@ -74,7 +74,7 @@ If you run a Ubuntu or Xubuntu system, you can install TexMaker with Synaptic Pa
 
 ![TexMaker Installation via Synaptic](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/linux/linux-texmaker-synaptic-01.png)
 
-Klick on the checkbox next to `texmaker` and select `Marc for installation`. Then klick on the `apply` button above. A new window appears. Klick again on `Apply` to start the installation.
+Click on the checkbox next to `texmaker` and select `Mark for installation`. Then click on the `apply` button above. A new window appears. Click again on `Apply` to start the installation.
 
 ![TexMaker Installation via Synaptic](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/linux/linux-texmaker-synaptic-02.png)
 
@@ -92,7 +92,7 @@ Go to the [Download Page](http://www.xm1math.net/texmaker/download.html) and scr
 
 ![Texmaker Website Download](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/linux/linux-texmaker-download.png)
 
-Choose the right download file for your operating system and klick on it. For Ubuntu and Debian users, the system should automatically offer to open the file with Ubuntu Software Center.
+Choose the right download file for your operating system and click on it. For Ubuntu and Debian users, the system should automatically offer to open the file with Ubuntu Software Center.
 
 ![Texmaker Website Download 2](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/linux/linux-texmaker-download-02.png)
 
