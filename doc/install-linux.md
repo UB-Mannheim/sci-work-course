@@ -40,7 +40,7 @@ Click on the checkbox next to `texlive` and select `Mark for installation`. Then
 
 ### Manual download and installation
 
-We recommend to install TexLive via command line or Synaptic Package Manager as described above. If there should occur any problems with that, you still can do it the hard way:
+We recommend installing TexLive via command line or Synaptic Package Manager as described above. If there should occur any problems with that, you can go the hard way and install TeXlive:
 
 Go to the [TexLive Distribution](https://www.tug.org/texlive/) website in any browser and click on the [download](https://www.tug.org/texlive/acquire-netinstall.html) link in the first item:
 
@@ -62,7 +62,7 @@ Open your `command line console` and change to the new subdirectory where you ca
 
 ![TexLive Installation](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/linux/linux-texlive-install-01.png)
 
-Next you are asked to type `i` and enter for starting installation to hard disk. The process can take some minutes.
+Next you are asked to type `i` and press enter to begin installation to hard disk. The process can take from a few minutes up to half an hour.
 
 ![TexLive Installation 2](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/linux/linux-texlive-install-02.png)
 
@@ -70,7 +70,7 @@ TexMaker
 ---------
 ### Installation via Synaptic Package Manager
 
-If you run a Ubuntu or Xubuntu system, you can install TexMaker with Synaptic Package Manager. Open the Synaptic Package Manager and search for `texmaker`.
+If you are running Debian-based system such as Debian or Ubuntu/XUbuntu/Kubuntu, you can install TexMaker from the graphical package manager Synaptic. Open the Synaptic Package Manager and search for `texmaker`.
 
 ![TexMaker Installation via Synaptic](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/linux/linux-texmaker-synaptic-01.png)
 
@@ -82,7 +82,7 @@ Finally, open TexMaker and then the Preferences through `Options` --> `Configure
 
 ![Texmaker settings](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/linux/linux-texmaker-config.png)
 
-###Installation via manual Download
+###Installation from source
 
 Open the [Texmaker homepage](http://www.xm1math.net/texmaker/) in your browser.
 
