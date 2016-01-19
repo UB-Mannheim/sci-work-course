@@ -1,5 +1,10 @@
-# my-master-thesis
-All the files for my Master thesis on "Yakshaving"
+# Test Repository for Course "Scientific Work" @ Uni Mannheim
 
-(c) 2015 Phineas Poopenberger
-
+* Fork this repository
+* Clone it to your computer
+* Find the file with your number in `data/birth-dates/`
+* Fill in the birth date for this computer pioneer
+* `git add`
+* `git commit`
+* `git push`
+* Send a pull request
