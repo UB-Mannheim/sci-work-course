@@ -1,4 +1,4 @@
-# Tset Repository for Course "Scientific Work" @ Uni Mannheim
+# Test Repository for Course "Scientific Work" @ Uni Mannheim
 
 [Website](http://bib.uni-mannheim.de/go-research.html)
 
