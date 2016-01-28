@@ -1,6 +1,20 @@
 Mac OSX TeX Installation instructions
 =====================================
 
+## Table of Contents
+
+* [Introduction](#introduction)
+* [Installation](#installation)
+  * [Homebrew](#homebrew)
+  * [Downloaded packages](#downloaded-packages)
+    * [MacTeX](#mactex)
+    * [TeXmaker](#texmaker)
+* [Configure Texmaker](#configure-texmaker)
+* [Verify Installation](#verify-installation)
+
+
+## Introduction
+
 To use LaTeX, you need two pieces of software:
 
 * A LaTeX distribution
@@ -15,20 +29,22 @@ We recommend:
 * [MacTeX Distribution](https://tug.org/mactex/). It is rather large (~2.9 GiB) but complete and up-to-date.
 * [Texmaker](http://www.xm1math.net/texmaker/). Free software, cross-platform, easy to configure yet powerful.
 
-Installation via homebrew (advanced users)
-------------------------------------------
+## Installation
 
-With [Homebrew]()
-In a terminal:
+### homebrew
+
+If you have [Homebrew]() installed (which we highly recommend), you can install
+both MacTeX and Texmaker from the command line. Open a terminal (search
+`terminal` in Launchpad) and execute these two commands:
 
 ```
 brew install mactex
 brew install texmaker
 ```
 
+### Downloaded packages
 
-MacTeX
-------
+#### MacTeX
 
 Go to the [MacTeX Distribution](https://tug.org/mactex/) website in Safari and click download:
 
@@ -55,8 +71,7 @@ You will need enter your password to complete the installation.
 
 ![Mactex Install complete](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/macosx/macosx-mactex-install-complete.png)
 
-TeXmaker
---------
+#### TeXmaker
 
 Open the [Texmaker homepage](http://www.xm1math.net/texmaker/) in Safari.
 
@@ -85,8 +100,33 @@ If you see the following dialog, you did not **ctrl-click** on `texmaker`.
 
 Add the Texmaker icon to the dock so you'll find it later.
 
-Finally, open the Preferences in Texmaker and select the second option for
-`Quick Build Command`. This will make Texmaker execute all the necessary steps to
-fully rebuild your document when you click the Build button.
+## Configure Texmaker
 
-![Texmaker settings](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/macosx/macosx-texmaker-settings.png)
+Start Texmaker and open the Preferences window (`Options` > `Configure Texmaker`).
+
+Select the second tab (*Quick Build*).
+
+Select the second option for *Quick Build Command* (`PdfLaTeX + Bib(La)tex + PdfLaTeX (x2) + View PDF`)
+
+This will make TexMaker execute all the necessary steps to fully rebuild your
+document when you click the Build button:
+
+![Texmaker settings](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/linux/linux-texmaker-config.png)
+
+## Verify Installation
+
+Create a new folder and download the files
+[testDocument.tex](https://raw.githubusercontent.com/UB-Mannheim/sci-work-course/master/doc/LatexExample/testDocument.tex)
+and
+[references.bib](https://raw.githubusercontent.com/UB-Mannheim/sci-work-course/master/doc/LatexExample/references.bib)
+(right click and `Save link target`).
+
+Open the `testDocument.tex` file in Texmaker.
+
+Compile the Document by pressing `F1` or click the left blue arrow on the
+toolbar. Make sure **Quick Build** is selected in the dropdown list.
+
+The document created should match [goal.pdf](https://raw.githubusercontent.com/UB-Mannheim/sci-work-course/master/doc/LatexExample/goal.pdf).
+
+If it does not, make sure you [configured Texmaker](#configure-texmaker)
+correctly and have texlive [installed](#installation).
