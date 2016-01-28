@@ -81,7 +81,7 @@ Now, we want to run a test:
 - Open TeXnicCenter
 - Select the `Open File` menu
 - Choose the [LatexExample\testDocument.tex](./LatexExample/testDocument.tex)
-  we provide (check that the [BibTeX file](./LatexExample/references.bib) is also in that directory)
+  we provide (check that the [references.bib](./LatexExample/references.bib) is also in that directory)
 - Switch to *LaTeX => PDF* and build the active document (Press `Ctrl+F7`):
 
 ![TeXnicCenter exec](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/windows/texnikcenter.png)
