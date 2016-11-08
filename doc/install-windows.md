@@ -92,3 +92,13 @@ Have a look at the ouput (Press `F5`). You should see [a PDF](./LatexExample/goa
 
 ![Adobe PDF](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/windows/adobe-pdf.png)
 
+Troubleshooting
+---------------
+
+If you are using Acrobat DC as the PDF reader and MikTeX issues an error or
+seems to hang, open up the 'Viewer' tab in the profiles configuration and make
+sure it looks like in this screenshot. Alternatively try setting `Server` to
+`acroviewR15`. See also [this answer on TeX
+StackExchange](https://tex.stackexchange.com/questions/250472/texniccenter-adobe-reader-dc).
+
+![MikTeX settings fix](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/windows/miktex-config-acrobat.png)
