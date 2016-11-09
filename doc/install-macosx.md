@@ -102,7 +102,7 @@ Add the Texmaker icon to the dock so you'll find it later.
 
 ## Configure Texmaker
 
-Start Texmaker and open the Preferences window (`Options` > `Configure Texmaker`).
+Start Texmaker and open the Preferences window (in the menubar click on **texmaker**` > `Preferences`).
 
 Select the second tab (*Quick Build*).
 
