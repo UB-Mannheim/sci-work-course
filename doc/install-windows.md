@@ -92,13 +92,22 @@ Have a look at the ouput (Press `F5`). You should see [a PDF](./LatexExample/goa
 
 ![Adobe PDF](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/windows/adobe-pdf.png)
 
-Troubleshooting
----------------
+Configure PDF Viewer (optional)
+-------------------------------
 
-If you are using Acrobat DC as the PDF reader and MikTeX issues an error or
-seems to hang, open up the 'Viewer' tab in the profiles configuration and make
-sure it looks like in this screenshot. Alternatively try setting `Server` to
-`acroviewR15`. See also [this answer on TeX
-StackExchange](https://tex.stackexchange.com/questions/250472/texniccenter-adobe-reader-dc).
-
-![MikTeX settings fix](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/windows/miktex-config-acrobat.png)
+It is possible that opening the PDF from within TeXnicCenter will now work immediatly
+and you are seeing an error message saying that "[DocOpen... Cannot execute the command"
+after the application seems to hang for several moments. Then you might have to configure
+manually your PDF Viewer in TeXnicCenter
+ 1. `Build > Define Output Profile...`
+ 2. Choose `LaTeX => PDF`
+ 3. Switch to `Viewer` tab
+ 4. Change the values accordingly
+ 
+|  | Server | Topic | Commend line argument |
+| --- | --- | --- | --- |
+| Acrobat Reader DC | [acroviewR15](https://tex.stackexchange.com/questions/250472/texniccenter-adobe-reader-dc) | control |
+| Acrobat DC | [acroviewA15](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/windows/miktex-config-acrobat.png) | control |
+| Acrobat Reader 11 | [acroviewR11](https://tex.stackexchange.com/questions/43864/texniccenter-adobe-acrobat-10) | control |
+| Acrobat 10 | acroviewA10 | control |
+| PDF X-Change Viewer | | |  `"%bm.pdf"`, `"%bm.pdf"`, `/close "%bm.pdf"` |
