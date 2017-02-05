@@ -26,10 +26,11 @@ then you can try `\addcontentsline` (see [here](http://www.weinelt.de/latex/addc
 
 If you are getting an error message "Cannot execute command" from TeXnicCenter
 after trying to view your pdf file with Acrobat, adjust the output profile
-settings:
+settings, see how to  [configure PDF Viewer in the Windows installation guide](https://github.com/UB-Mannheim/sci-work-course/blob/master/doc/install-windows.md#configure-pdf-viewer-optional)
 
-* [Acrobat DC](https://tex.stackexchange.com/questions/250472/texniccenter-adobe-reader-dc)
-* [Acrobat 10 or 11](https://tex.stackexchange.com/questions/43864/texniccenter-adobe-acrobat-10)
+## Texmaker gives "command not found" errors
+
+Set up the absolute paths to the tools.
 
 ## How can I find LaTeX commands for symbols by drawing them?
 
