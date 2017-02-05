@@ -9,4 +9,4 @@ Documentation on LaTeX
 
 ## Frequently Asked Questions
 
-See [./faq.md](FAQ).
+See [FAQ](faq.md).
