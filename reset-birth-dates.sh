@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ -n "$1" ]];then
+if [[ -n "$1" ]]; then
     RESET_COMMIT=$1
 else
     RESET_COMMIT="c4f307d6620ae5543615453379d17b033b59ecdf"
