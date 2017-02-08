@@ -6,6 +6,7 @@
 * [Is there a Wikibook on LaTeX?](#is-there-a-wikibook-on-latex)
 * [How can I add the bibliography section to the table of contents?](#how-can-i-add-the-bibliography-section-to-the-table-of-contents)
 * [I don't have any output profiles configured in TeXnicCenter](#i-don-t-have-any-output-profiles-configured-in-texniccenter)
+* [Installing packages on-the-fly in TeXnicCenter does not work](#installing-packages-on-the-fly-in-texniccenter-does-not-work)
 * [TeXnicCenter gives an error "Cannot execute command"](#texniccenter-gives-an-error--cannot-execute-command-)
 * [How can I find LaTeX commands for symbols by drawing them?](#how-can-i-find-latex-commands-for-symbols-by-drawing-them)
 * [What is the difference between \centering and the `center` environment](#what-is-the-difference-between--centering-and-the-center-environment)
@@ -38,6 +39,19 @@ Try then:
 by hand. This can be the case when you have installed MikTeX not for all users but
 only for the current user. Start to look for the `MiKTeX/2.9/miktex/bin` directory
 in the folder `C:\Users\{YOUR_USER_NAME}\AppData\Roaming`, copy this path and try again.
+
+## Installing packages on-the-fly in TeXnicCenter does not work
+
+For the more advanced exercises you need special packages, e.g. `tex\context\base\supp-pdf.mkii`
+for `\include{graphicx}`. If you don't have these packages installed locally then
+it is possible that during the build process in TeXnicCenter [you are asked to install
+this package on-the-fly](https://i.stack.imgur.com/b1b0y.png). After a successful installation
+this dialog should not appear any more. However, it is possible that this dialog
+apears again and again and the installation always produces some errors.
+
+In this case you should try to use the `MiKTeX Package Manager` (maybe also as Administrator),
+see also [here](http://tex.stackexchange.com/questions/49338/miktex-2-9-install-packages-on-the-fly)
+and [here](http://latex-community.org/forum/viewtopic.php?t=9034).
 
 ## TeXnicCenter gives an error "Cannot execute command"
 
