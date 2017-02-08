@@ -42,6 +42,13 @@ brew install mactex
 brew install texmaker
 ```
 
+If these commands throw any error (see #159),
+it is possible that you have to use Caskroom instead:
+```
+brew install caskroom/cask/brew-cask
+brew cask install mactex texmaker
+```
+
 ### Downloaded packages
 
 #### MacTeX
