@@ -10,6 +10,7 @@
 * [What is the difference between \centering and the `center` environment](#what-is-the-difference-between--centering-and-the-center-environment)
 * [How do I specify multiple authors in BibTeX?](#how-do-i-specify-multiple-authors-in-bibtex)
 * [How can I change the font size?](#how-can-i-change-the-font-size)
+* [Error: Cannot determine size of graphic](#error-cannot-determine-size-of-graphic)
 
 <!-- END-MARKDOWN-TOC -->
 
@@ -51,3 +52,14 @@ looked as any text. Moreover, this often lead to errors like "too many comas".
 > The standard classes, article, report and book support 3 different font sizes, 10pt, 11pt, 12pt (by default 10pt)." 
 
 (see [here](http://texblog.org/2012/08/29/changing-the-font-size-in-latex/) for a nice explanation).
+
+## Error: Cannot determine size of graphic
+
+When the `\includegraphics` gives an error for your picture and tells you that no
+bounding box is found, then you can either
+* use another image or image format
+* mention explicitely the bounding box in LaTeX, i.e. for an image named `pic.jpg`
+with width 1280 and height 960:
+```latex
+\includegraphics[bb=0 0 1280 960]{pic.jpg}
+```
