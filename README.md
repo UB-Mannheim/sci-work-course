@@ -1,4 +1,4 @@
-# Test Repository for Course "Scientific Work" @ Uni Mannheim
+# Test Repository for Course "Scientific Writing and Bibliographic Research" @ Uni Mannheim
 
 [Website](http://bib.uni-mannheim.de/en/cs-course/)
 
