@@ -3,7 +3,7 @@
 if [[ -n "$1" ]]; then
     RESET_COMMIT=$1
 else
-    RESET_COMMIT="7cf80935c01bb2b15e8164765025e1bd86d0dd6c"
+    RESET_COMMIT="f2cfe46245ef67f35302e79b0d9c4993011d082c"
 fi
 set -x
 git checkout "$RESET_COMMIT" data/birth-dates/*
