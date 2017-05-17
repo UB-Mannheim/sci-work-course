@@ -104,7 +104,7 @@ manually your PDF Viewer in TeXnicCenter
  3. Switch to `Viewer` tab
  4. Change the values accordingly
  
-|  | Server | Topic | Commend line argument |
+|  | Server | Topic | Command line arguments |
 | --- | --- | --- | --- |
 | Acrobat Reader DC | [acroviewR15](https://tex.stackexchange.com/questions/250472/texniccenter-adobe-reader-dc) | control |
 | Acrobat DC | [acroviewA15](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/windows/miktex-config-acrobat.png) | control |
