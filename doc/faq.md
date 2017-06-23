@@ -13,6 +13,7 @@
 * [How do I specify multiple authors in BibTeX?](#how-do-i-specify-multiple-authors-in-bibtex)
 * [How can I change the font size?](#how-can-i-change-the-font-size)
 * [Error: Cannot determine size of graphic](#error-cannot-determine-size-of-graphic)
+* [How can I make newlines or multiple lines in cells of some tabular?](#how-can-i-make-newlines-or-multiple-lines-in-cells-of-some- tabular)
 
 <!-- END-MARKDOWN-TOC -->
 
@@ -93,3 +94,16 @@ with width 1280 and height 960:
 ```latex
 \includegraphics[bb=0 0 1280 960]{pic.jpg}
 ```
+
+## How can I make newlines or multiple lines in cells of some tabular?
+
+This is for example needed if otherwise the text in a column is too wide for the page size.
+The easiest is to use `p{'width'}` for such columns in the tabular specification, and possibly
+use in such columns then also `\newline`, e.g.
+```tex
+\begin{tabular}{cp{11cm}}
+1 & blabla\\
+2 & blabla blabla blabla\newline blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla 
+\end{tabular}
+```
+See also https://tex.stackexchange.com/questions/40561/table-with-multiple-lines-in-some-cells#answer-102986 and https://en.wikibooks.org/wiki/LaTeX/Tables#The_tabular_environment.
