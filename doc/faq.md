@@ -13,7 +13,7 @@
 * [How do I specify multiple authors in BibTeX?](#how-do-i-specify-multiple-authors-in-bibtex)
 * [How can I change the font size?](#how-can-i-change-the-font-size)
 * [Error: Cannot determine size of graphic](#error-cannot-determine-size-of-graphic)
-* [How can I make newlines or multiple lines in cells of some tabular?](#how-can-i-make-newlines-or-multiple-lines-in-cells-of-some- tabular)
+* [How can I make newlines or multiple lines in cells of some tabular?](#how-can-i-make-newlines-or-multiple-lines-in-cells-of-some-tabular)
 
 <!-- END-MARKDOWN-TOC -->
 
