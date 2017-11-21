@@ -7,7 +7,7 @@
 * [How can I add the bibliography section to the table of contents?](#how-can-i-add-the-bibliography-section-to-the-table-of-contents)
 * [I don't have any output profiles configured in TeXnicCenter](#i-don-t-have-any-output-profiles-configured-in-texniccenter)
 * [Installing packages on-the-fly in TeXnicCenter does not work](#installing-packages-on-the-fly-in-texniccenter-does-not-work)
-* [TeXnicCenter gives an error "Cannot execute command"](#texniccenter-gives-an-error--cannot-execute-command-)
+* [TeXnicCenter gives an error "Cannot execute command"](#texniccenter-gives-an-error-cannot-execute-command)
 * [How can I find LaTeX commands for symbols by drawing them?](#how-can-i-find-latex-commands-for-symbols-by-drawing-them)
 * [What is the difference between \centering and the `center` environment](#what-is-the-difference-between--centering-and-the-center-environment)
 * [How do I specify multiple authors in BibTeX?](#how-do-i-specify-multiple-authors-in-bibtex)
