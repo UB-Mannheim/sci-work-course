@@ -106,9 +106,14 @@ manually your PDF Viewer in TeXnicCenter
  
 |  | Server | Topic | Command line arguments |
 | --- | --- | --- | --- |
+| Acrobat Reader DC (since January 2018) | [acroviewR18](https://tex.stackexchange.com/questions/250472/texniccenter-adobe-reader-dc/364613#364613) | control |
 | Acrobat Reader DC (since July 2017) | [acroviewR17](https://tex.stackexchange.com/questions/250472/texniccenter-adobe-reader-dc/364613#364613) | control |
 | Acrobat Reader DC | [acroviewR15](https://tex.stackexchange.com/questions/250472/texniccenter-adobe-reader-dc) | control |
-| Acrobat DC | [acroviewA15](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/windows/miktex-config-acrobat.png) | control |
+| Acrobat DC | [acroviewA15](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/windows/texniccenter-config-acrobat.png) | control |
 | Acrobat Reader 11 | [acroviewR11](https://tex.stackexchange.com/questions/43864/texniccenter-adobe-acrobat-10) | control |
 | Acrobat 10 | acroviewA10 | control |
 | PDF X-Change Viewer | | |  `"%bm.pdf"`, `"%bm.pdf"`, `/close "%bm.pdf"` |
+
+### Example Configuration for Acrobat Reader DC:
+
+<img src="https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/windows/texniccenter-configure-acrobat-dc.png" width=50%/>
