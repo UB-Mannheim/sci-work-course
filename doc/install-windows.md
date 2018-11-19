@@ -106,6 +106,7 @@ manually your PDF Viewer in TeXnicCenter
  
 |  | Server | Topic | Command line arguments |
 | --- | --- | --- | --- |
+| Acrobat Reader DC (since October 2018) | acroviewR19 | control |
 | Acrobat Reader DC (since January 2018) | [acroviewR18](https://tex.stackexchange.com/questions/250472/texniccenter-adobe-reader-dc/364613#364613) | control |
 | Acrobat Reader DC (since July 2017) | [acroviewR17](https://tex.stackexchange.com/questions/250472/texniccenter-adobe-reader-dc/364613#364613) | control |
 | Acrobat Reader DC | [acroviewR15](https://tex.stackexchange.com/questions/250472/texniccenter-adobe-reader-dc) | control |
