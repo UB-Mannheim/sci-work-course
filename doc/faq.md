@@ -14,6 +14,7 @@
 * [How can I change the font size?](#how-can-i-change-the-font-size)
 * [Error: Cannot determine size of graphic](#error-cannot-determine-size-of-graphic)
 * [How can I make newlines or multiple lines in cells of some tabular?](#how-can-i-make-newlines-or-multiple-lines-in-cells-of-some-tabular)
+* [How to cite an online source with BibTeX?](#how-to-cite-an-online-source-with-bibtex)
 
 <!-- END-MARKDOWN-TOC -->
 
@@ -107,3 +108,36 @@ use in such columns then also `\newline`, e.g.
 \end{tabular}
 ```
 See also https://tex.stackexchange.com/questions/40561/table-with-multiple-lines-in-some-cells#answer-102986 and https://en.wikibooks.org/wiki/LaTeX/Tables#The_tabular_environment.
+
+
+## How to cite an online source with BibTeX?
+
+### Standard citation styles
+
+By default Zotero export an website to a `MISC` element in BibTeX and with the `alpha` style only the following elements will be shown:
+```
+Author. Title, Year.
+```
+
+It is possible to add the url of the website in the a `howpublished` of you BibTeX file, e.g.
+```
+howpublished = {https://bib.uni-mannheim.de},
+```
+resp. if you are using `hyperref`then you can also add this line
+```
+howpublished = {\url{https://bib.uni-mannheim.de}},
+```
+Moreover, you can save the access data in a note field of your BibTeX file, e.g.
+```
+note = {Accessed on 28.3.2018},
+```
+This will only show up if you also use the `howpublished` field.
+
+### Advanced citation styles with natbib
+
+An alternative option is to use more advanced citation styles, e.g. `natplain` from the `natbib` package, i.e.
+```
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+```
+which supports also the `url` parameter.
