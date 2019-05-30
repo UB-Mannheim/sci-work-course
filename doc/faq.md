@@ -1,22 +1,30 @@
 # Frequently Asked Questions
 
-<!-- Refresh TOC with 'shinclude -c xml -i faq.md' -->
-
-<!-- BEGIN-MARKDOWN-TOC -->
-* [Is there a Wikibook on LaTeX?](#is-there-a-wikibook-on-latex)
-* [How can I add the bibliography section to the table of contents?](#how-can-i-add-the-bibliography-section-to-the-table-of-contents)
-* [I don't have any output profiles configured in TeXnicCenter](#i-don-t-have-any-output-profiles-configured-in-texniccenter)
-* [Installing packages on-the-fly in TeXnicCenter does not work](#installing-packages-on-the-fly-in-texniccenter-does-not-work)
-* [TeXnicCenter gives an error "Cannot execute command"](#texniccenter-gives-an-error-cannot-execute-command)
-* [How can I find LaTeX commands for symbols by drawing them?](#how-can-i-find-latex-commands-for-symbols-by-drawing-them)
-* [What is the difference between \centering and the `center` environment](#what-is-the-difference-between--centering-and-the-center-environment)
-* [How do I specify multiple authors in BibTeX?](#how-do-i-specify-multiple-authors-in-bibtex)
-* [How can I change the font size?](#how-can-i-change-the-font-size)
-* [Error: Cannot determine size of graphic](#error-cannot-determine-size-of-graphic)
-* [How can I make newlines or multiple lines in cells of some tabular?](#how-can-i-make-newlines-or-multiple-lines-in-cells-of-some-tabular)
-* [How to cite an online source with BibTeX?](#how-to-cite-an-online-source-with-bibtex)
-
-<!-- END-MARKDOWN-TOC -->
+* LaTeX in general
+  * [Is there a Wikibook on LaTeX?](#is-there-a-wikibook-on-latex)
+  * [How can I find LaTeX commands for symbols by drawing them?](#how-can-i-find-latex-commands-for-symbols-by-drawing-them)
+  * [What is the difference between \centering and the `center` environment](#what-is-the-difference-between--centering-and-the-center-environment)
+  * [How can I change the font size?](#how-can-i-change-the-font-size)
+  * [Error: Cannot determine size of graphic](#error-cannot-determine-size-of-graphic)
+  * [How can I make newlines or multiple lines in cells of some tabular?](#how-can-i-make-newlines-or-multiple-lines-in-cells-of-some-tabular)
+* Bibliographies with BibTeX
+  * [How can I add the bibliography section to the table of contents?](#how-can-i-add-the-bibliography-section-to-the-table-of-contents)
+  * [How to cite an online source with BibTeX?](#how-to-cite-an-online-source-with-bibtex)
+  * [How do I specify multiple authors in BibTeX?](#how-do-i-specify-multiple-authors-in-bibtex)
+* TeXstudio
+  * [How to enable line numbers?](#how-to-enable-line-numbers)
+  * [How to configure git in TeXstudio?](how-to-configure-git-in-texstudio)
+* Texmaker
+  * [Texmaker gives "command not found" errors](#texmaker-gives-command-not-found-errors)
+* TeXnicCenter
+  * [I don't have any output profiles configured in TeXnicCenter](#i-don-t-have-any-output-profiles-configured-in-texniccenter)
+  * [Installing packages on-the-fly in TeXnicCenter does not work](#installing-packages-on-the-fly-in-texniccenter-does-not-work)
+  * [TeXnicCenter gives an error "Cannot execute command"](#texniccenter-gives-an-error-cannot-execute-command)
+  * [Configure Sumatra PDF with TexnicCenter](#configure-sumatra-pdf-with-texnicenter)
+* Zotero
+  * [How to change the language of Zotero GUI?](#how-to-change-the-language-of-zotero-gui)
+* Bibliographic Databases
+  * [Advanced search in the ACM Digital Library](#advanced-search-in-the-acm-digital-library)
 
 ## Is there a Wikibook on LaTeX?
 
@@ -61,6 +69,10 @@ If you are getting an error message "Cannot execute command" from TeXnicCenter
 after trying to view your pdf file with Acrobat, adjust the output profile
 settings, see how to  [configure PDF Viewer in the Windows installation guide](https://github.com/UB-Mannheim/sci-work-course/blob/master/doc/install-windows.md#configure-pdf-viewer-optional)
 
+## Configure Sumatra PDF with TexnicCenter
+
+Have a look at https://pic-projekte.de/blog/sumatra-pdf-mit-texniccenter/ and  https://tex.stackexchange.com/questions/116981/how-to-configure-texniccenter-2-0-with-sumatra-2013-2016-version
+
 ## Texmaker gives "command not found" errors
 
 Set up the absolute paths to the tools.
@@ -75,8 +87,8 @@ See [Difference between `\centering` and `\begin{center}...\end{center}`](http:/
 
 ## How do I specify multiple authors in BibTeX?
 
-Different authors have to be seperated by "and" in the author-field. A comma
-will be used to seperate last name and first name. A semicolon will be just
+Different authors have to be separated by "and" in the author-field. A comma
+will be used to separate last name and first name. A semicolon will be just
 looked as any text. Moreover, this often lead to errors like "too many comas".
 
 ## How can I change the font size?
@@ -141,3 +153,29 @@ An alternative option is to use more advanced citation styles, e.g. `natplain` f
 \bibliographystyle{plainnat}
 ```
 which supports also the `url` parameter.
+
+## How to enable line numbers?
+
+Options -> Configure TeXstudio -> Toggle "Show Advanced Options" at the bottom on -> Adv. Editor -> Show Line Numbers
+
+## How to configure git in TeXstudio?
+
+1. Setting an alias in git ("ci" is used in SVN and can be just replaced with "commit" in git): `git config --global alias.ci "commit"`
+2. Options -> Configure TeXstudio -> Commands: In SVN and SVNADMIN enter  `git`.
+3. (optionally) Options -> Configure TeXstudio -> Toggle "Show Advanced Options" at the bottom on -> Adv. Editor -> Toolbars: For example you can in the `Tools` toolbar add the command `Check in...` from the File > SVN menu (and even give it a new icon)
+
+You may need to init a new git repository outside TeXstudio. Then, you can use the new button or the menue File -> SVN -> Check in.. to commit the current file or all changed files where you can choose a commit message.
+
+Alternatively, there is an option for an automatic check in at every save. However, this seems to produce a lot of tiny commits with equal commit messages, which might be of less advantages.
+
+See also https://tex.stackexchange.com/questions/112396/texstudio-texmaker-and-github
+
+## How to change the language of Zotero GUI?
+
+https://www.zotero.org/support/supported_languages
+
+## Advanced search in the ACM Digital Library
+
+In the ACM Digital Library some special characters like `:` for separating title and subtitle are leading to no results. Actually, this is only the case in the Advanced Search and not in the Basic Search. _Hint_: Delete these special characters in your search query or use quotation marks `"` for searching a phrase.
+
+The advanced search in the ACM Digital Library is sometimes including the ACM Guide to Computing Literature and sometimes you have to include it manually. The behavior seems to depend on whether you are on Campus (or connected via VPN) or just accessing from home. What is working: Add the results from the guide before you go to advanced search.
