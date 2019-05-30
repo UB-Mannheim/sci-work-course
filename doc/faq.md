@@ -13,7 +13,7 @@
   * [How do I specify multiple authors in BibTeX?](#how-do-i-specify-multiple-authors-in-bibtex)
 * TeXstudio
   * [How to enable line numbers?](#how-to-enable-line-numbers)
-  * [How to configure git in TeXstudio?](how-to-configure-git-in-texstudio)
+  * [How to configure git in TeXstudio?](#how-to-configure-git-in-texstudio)
 * Texmaker
   * [Texmaker gives "command not found" errors](#texmaker-gives-command-not-found-errors)
 * TeXnicCenter
