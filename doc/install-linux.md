@@ -47,7 +47,7 @@ sudo apt-get install texlive texstudio
 
 Open the Synaptic Package Manager and search for `texlive`.
 
-![TexLive Installation via Synaptic](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/linux/linux-texlive-synaptic-01.png)
+![TexLive Installation via Synaptic](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/linux/linux-texlive-synaptic-03.png)
 
 Click on the checkbox next to `texlive` and select `Mark for installation`.
 
