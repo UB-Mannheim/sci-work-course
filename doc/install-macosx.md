@@ -93,6 +93,6 @@ and
 Open the `testDocument.tex` file in TeXstudio.
 
 Compile the Document by pressing `F5` or click the left green arrow on the
-toolbar. Make sure **Quick Build** is selected in the dropdown list.
+toolbar.
 
 The document created should match [goal.pdf](https://raw.githubusercontent.com/UB-Mannheim/sci-work-course/master/doc/LatexExample/goal.pdf).
