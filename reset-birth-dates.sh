@@ -10,3 +10,5 @@ git pull origin
 git checkout "$RESET_COMMIT" data/birth-dates/*
 git commit -m "Reset birth dates"
 set +x
+
+echo "\nYou can check the latest commit now and then push it to GitHub."
