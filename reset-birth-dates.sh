@@ -3,7 +3,7 @@
 if [[ -n "$1" ]]; then
     RESET_COMMIT=$1
 else
-    RESET_COMMIT="c5aeef3904abac55060ea05e03240751ba14b7fd"
+    RESET_COMMIT="798f29063ace01c61ebe57b9f9e726398556509f"
 fi
 set -x
 git pull origin
