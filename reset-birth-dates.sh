@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
-if [[ -n "$1" ]]; then
-    RESET_COMMIT=$1
+if [ $# -gt 0 ]; then
+    RESET_COMMIT="$1"
 else
     RESET_COMMIT="798f29063ace01c61ebe57b9f9e726398556509f"
 fi
