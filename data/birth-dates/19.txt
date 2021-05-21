@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Sophie Wilson (born Roger Wilson): 1957 (exact date not known)
+=======
+Sophie Wilson (born Roger Wilson): ????
+>>>>>>> 4f8f345e80e85763a4e164292acf100102342e9a
