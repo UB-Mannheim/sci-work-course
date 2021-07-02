@@ -6,7 +6,7 @@ else
     RESET_COMMIT="016dce962e682cca82efc481a6b8974ed1c3c5b5"
 fi
 set -x
-git pull origin
+git pull --rebase origin
 git checkout "$RESET_COMMIT" data/birth-dates/*
 git commit -m "Reset birth dates"
 set +x
