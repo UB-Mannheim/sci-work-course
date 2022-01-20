@@ -39,6 +39,9 @@ both MacTeX and TeXstudio from the command line. Open a terminal (search
 ```
 brew cask install mactex
 brew cask install texstudio
+after year 2021, these two codes should be as below:
+brew cask install mactex
+brew install --cask mactex
 ```
 
 ### Downloaded packages
