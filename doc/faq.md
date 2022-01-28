@@ -10,6 +10,7 @@
 * Bibliographies with BibTeX
   * [How can I add the bibliography section to the table of contents?](#how-can-i-add-the-bibliography-section-to-the-table-of-contents)
   * [How to cite an online source with BibTeX?](#how-to-cite-an-online-source-with-bibtex)
+  * [How to cite a dataset practically](#how-to-cite-a-dataset-practically)
   * [How do I specify multiple authors in BibTeX?](#how-do-i-specify-multiple-authors-in-bibtex)
 * TeXstudio
   * [How to enable line numbers?](#how-to-enable-line-numbers)
@@ -153,6 +154,25 @@ An alternative option is to use more advanced citation styles, e.g. `natplain` f
 \bibliographystyle{plainnat}
 ```
 which supports also the `url` parameter.
+
+## How to cite a dataset practically?
+
+We want to think in our workflow with Zotero, BibTeX and LaTeX how we can do a citation to a dataset.
+
+There is not yet an item type for datasets/research data in Zotero. However, this is planned and there are workarounds to use the "extra" field to add such additional information, cf. https://www.zotero.org/support/dev/translators/datasets . Thus, you can choose the item type "document" (or journal article if you prefer) and add the line "Type: dataset" in the extra field. For example:
+
+<img src="https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/datacitationzotero.png" width="50%"/>
+
+Then, this Zotero item will be exported to "misc" in BibTeX. That is fine in general, but some fields will then be not considered in any citation in LaTeX. This needs some manual editing in the BibTeX file:
+
+1. Add a line with the key `howpublished` and the information about the repository/publisher as well as the URL preferably a DOI written as a URL. In the example I would add the line `howpublished = {Harvard Dataverse. \url{https://doi.org/10.7910/DVN/GTJTFF}},`. (You need to use the hyperref package for the \url-command otherwise delete it and just write the url.)
+2. Delete the line `note = {Type: dataset},` (suggestion)
+
+This will then produce the following output (with apalike BibTeX style):
+
+<img src="https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/datacitationlatex.png" width="50%"/>
+
+More information about citing dataset can also been found in [the slides](https://speakerdeck.com/zuphilip/datenzitationen-theorie-praxis-und-perspektiven-1?slide=10) (10-13).
 
 ## How to enable line numbers?
 
