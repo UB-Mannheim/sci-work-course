@@ -1,4 +1,4 @@
-Mac OSX TeX Installation instructions
+macOS TeX Installation instructions
 =====================================
 
 ## Table of Contents
@@ -37,31 +37,19 @@ both MacTeX and TeXstudio from the command line. Open a terminal (search
 `terminal` in Launchpad) and execute these two commands:
 
 ```
-brew cask install mactex
-brew cask install texstudio
-after year 2021, these two codes should be as below:
-brew cask install mactex
-brew install --cask mactex
+brew install mactex
+brew install texstudio
 ```
 
 ### Downloaded packages
 
 #### MacTeX
 
-Go to the [MacTeX Distribution](https://tug.org/mactex/) website in Safari and click download:
+Open the [MacTeX Distribution](https://tug.org/mactex/) website in your browser and download:
 
 ![Mactex Website Download](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/macosx/macosx-mactex-download.png)
 
-This should open a new page with the mirror used:
-
-![Mactex Website Download 2](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/macosx/macosx-mactex-download2.png)
-
-If the download isn't starting, reload this page until you hit a working mirror.
-
-Once download has finished, open `Downloads` in Finder and click on the
-`mactex-20150613.pkg` file.
-
-![Mactex Downloaded](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/macosx/macosx-mactex-downloaded.png)
+Once download has finished, open `Downloads` in Finder and double-click the file `MacTeX.pkg`.
 
 The default options for the installation are fine.
 
