@@ -55,11 +55,7 @@ The default options for the installation are fine.
 
 MacTeX is Free Software, there are no traps lurking in the license screen.
 
-![Mactex Install start](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/macosx/macosx-mactex-install.png)
-
 You will need enter your password to complete the installation.
-
-![Mactex Install complete](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/macosx/macosx-mactex-install-complete.png)
 
 #### TeXstudio
 
