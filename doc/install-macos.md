@@ -5,8 +5,8 @@ macOS TeX Installation instructions
 
 * [Introduction](#introduction)
 * [Installation](#installation)
-  * [Homebrew](#homebrew)
-  * [Downloaded packages](#downloaded-packages)
+  * [Install with Homebrew](#install-with-homebrew)
+  * [Download packages manually](#download-packages-manually)
     * [MacTeX](#mactex)
     * [TeXstudio](#texstudio)
 * [Verify Installation](#verify-installation)
