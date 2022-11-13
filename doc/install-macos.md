@@ -32,7 +32,7 @@ We recommend:
 
 ### homebrew
 
-If you have [Homebrew]() installed (which we highly recommend), you can install
+If you have [Homebrew](https://brew.sh/) installed (which we highly recommend), you can install
 both MacTeX and TeXstudio from the command line. Open a terminal (search
 `terminal` in Launchpad) and execute these two commands:
 
