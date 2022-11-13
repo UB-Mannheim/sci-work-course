@@ -1,4 +1,4 @@
-# Windows Installation instructions
+# Windows Installation Instructions
 
 To use LaTeX, you need two pieces of software:
 
