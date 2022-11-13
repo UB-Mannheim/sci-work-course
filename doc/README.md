@@ -5,7 +5,7 @@ Documentation on LaTeX
 
 * [Windows Vista, 7, 8, 10, 11](./install-windows.md)
 * [macOS](./install-macos.md)
-* [Linux (Ubuntu, Debian)](./install-linux.md)
+* [Linux (Arch Linux, Debian, Ubuntu)](./install-linux.md)
 
 ## Frequently Asked Questions
 
