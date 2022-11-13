@@ -35,15 +35,17 @@ Use these instructions if you are running a Debian-based Linux distro such as
 * Ubuntu / Xubuntu / Kubuntu
 * Mint
 
-#### apt-get
+The installation can be done either from the command line or by using a graphical package manager like Synaptic.
+
+#### Installation from the command line
 
 Open a terminal such as `gnome-terminal` and enter this command:
 
 ```
-sudo apt-get install texlive texstudio
+sudo apt install texlive texstudio
 ```
 
-#### Synaptic Package Manager
+#### Installation with Synaptic Package Manager
 
 Open the Synaptic Package Manager and search for `texlive`.
 
