@@ -50,13 +50,13 @@ Now, we want to run a test:
 
 Build the active document two more times.
 
-Have a look at the ouput (Press `F5`). You should see [a PDF](./LatexExample/goal.pdf) without question marks:
+Have a look at the output (Press `F5`). You should see [a PDF](./LatexExample/goal.pdf) without question marks:
 
 ![Adobe PDF](https://raw.githubusercontent.com/UB-Mannheim/ubma-screenshots/master/sci-work/windows/adobe-pdf.png)
 
 ## Configure PDF Viewer (optional)
 
-It is possible that opening the PDF from within TeXnicCenter will now work immediatly
+It is possible that opening the PDF from within TeXnicCenter will now work immediately
 and you are seeing an error message saying that "[DocOpen... Cannot execute the command"
 after the application seems to hang for several moments. Then you might have to configure
 manually your PDF Viewer in TeXnicCenter

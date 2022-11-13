@@ -58,7 +58,7 @@ for `\include{graphicx}`. If you don't have these packages installed locally the
 it is possible that during the build process in TeXnicCenter [you are asked to install
 this package on-the-fly](https://i.stack.imgur.com/b1b0y.png). After a successful installation
 this dialog should not appear any more. However, it is possible that this dialog
-apears again and again and the installation always produces some errors.
+appears again and again and the installation always produces some errors.
 
 In this case you should try to use the `MiKTeX Package Manager` (maybe also as Administrator),
 see also [here](http://tex.stackexchange.com/questions/49338/miktex-2-9-install-packages-on-the-fly)
@@ -103,7 +103,7 @@ looked as any text. Moreover, this often lead to errors like "too many comas".
 When the `\includegraphics` gives an error for your picture and tells you that no
 bounding box is found, then you can either
 * use another image or image format
-* mention explicitely the bounding box in LaTeX, i.e. for an image named `pic.jpg`
+* mention explicitly the bounding box in LaTeX, i.e. for an image named `pic.jpg`
 with width 1280 and height 960:
 ```latex
 \includegraphics[bb=0 0 1280 960]{pic.jpg}
@@ -184,7 +184,7 @@ Options -> Configure TeXstudio -> Toggle "Show Advanced Options" at the bottom o
 2. Options -> Configure TeXstudio -> Commands: In SVN and SVNADMIN enter  `git`.
 3. (optionally) Options -> Configure TeXstudio -> Toggle "Show Advanced Options" at the bottom on -> Adv. Editor -> Toolbars: For example you can in the `Tools` toolbar add the command `Check in...` from the File > SVN menu (and even give it a new icon)
 
-You may need to init a new git repository outside TeXstudio. Then, you can use the new button or the menue File -> SVN -> Check in.. to commit the current file or all changed files where you can choose a commit message.
+You may need to init a new git repository outside TeXstudio. Then, you can use the new button or the menu File -> SVN -> Check in.. to commit the current file or all changed files where you can choose a commit message.
 
 Alternatively, there is an option for an automatic check in at every save. However, this seems to produce a lot of tiny commits with equal commit messages, which might be of less advantages.
 
