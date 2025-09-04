@@ -1,0 +1,33 @@
+name: Check birth dates
+
+on:
+  pull_request:
+    paths:
+      - "data/birth-dates/*.txt"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out PR
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Always use the BASE branch's trusted files
+      - name: Use base branch script and answer key
+        run: |
+          set -euo pipefail
+          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          git show "$BASE_SHA:.github/workflows/validate_birthdates.sh" > .github/workflows/validate_birthdates.sh
+          git show "$BASE_SHA:.github/workflows/birthdates" > .github/workflows/birthdates
+          chmod +x .github/workflows/validate_birthdates.sh
+
+      - name: Validate changed files
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.sha }}
+        run: .github/workflows/validate_birthdates.sh
