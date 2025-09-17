@@ -5,6 +5,10 @@ on:
     paths:
       - "data/birth-dates/*.txt"
 
+concurrency: # Only one job per PR at a time
+  group: pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true # cancel any in-progress runs when a new commit is pushed
+
 permissions:
   contents: read
 
@@ -15,13 +19,14 @@ jobs:
       - name: Check out PR
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1 # no need for full history
 
-      # Always use the BASE branch's trusted files
+      # Always use the BASE branch's trusted files:
       - name: Use base branch script and answer key
         run: |
           set -euo pipefail
-          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          BASE_SHA='${{ github.event.pull_request.base.sha }}'
+          git fetch --no-tags --depth=1 origin "$BASE_SHA"
           git show "$BASE_SHA:.github/workflows/validate_birthdates.sh" > .github/workflows/validate_birthdates.sh
           git show "$BASE_SHA:.github/workflows/birthdates" > .github/workflows/birthdates
           chmod +x .github/workflows/validate_birthdates.sh
