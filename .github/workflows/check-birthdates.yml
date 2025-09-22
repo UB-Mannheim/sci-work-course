@@ -19,7 +19,7 @@ jobs:
       - name: Check out PR
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1 # no need for full history
+          fetch-depth: 0 # no need for full history
 
       # Always use the BASE branch's trusted files:
       - name: Use base branch script and answer key
@@ -34,5 +34,5 @@ jobs:
       - name: Validate changed files
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
-          HEAD_SHA: ${{ github.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: .github/workflows/validate_birthdates.sh
