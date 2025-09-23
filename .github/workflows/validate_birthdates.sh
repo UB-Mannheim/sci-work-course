@@ -56,14 +56,15 @@ expectedLine="$(
 
 # Check if the file had an entry in the results file:
 if [[ -z "$expectedLine" ]]; then
-  echo "::error file=${file}::No result match found for ${basefile}!" #
+  echo "::error file=${file}::No result match found for ${basefile}!"
   echo "**${basefile}** – ❌ No result match found" >> "$GITHUB_STEP_SUMMARY"
   exit 1
 fi
 
 # Read received change: strip CRs, trim leading/trailing whitespace/newlines
 receivedLine="$(
-  tr -d '\r' < "$file" \
+  git show "${HEAD}:${file}" \
+  | tr -d '\r' \
   | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
 )"
 
