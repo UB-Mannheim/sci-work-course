@@ -1,0 +1,63 @@
+name: Restrict Changes
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+concurrency: # Only one job per PR at a time
+  group: pr-${{ github.event.pull_request.number }}-a
+  cancel-in-progress: true # cancel any in-progress runs when a new commit is pushed
+
+jobs:
+  check-changed-files:
+    name: Restrict Changes
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      # Check out the PR files:
+      - name: Check Out PR
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 1 # no need for full history
+
+      - name: Fetch PR head commit
+        run: |
+          set -euo pipefail
+          HEAD_SHA='${{ github.event.pull_request.head.sha }}'
+          HEAD_REPO='${{ github.event.pull_request.head.repo.clone_url }}'
+          git remote add head "$HEAD_REPO"
+          git fetch --no-tags --depth=1 head "$HEAD_SHA"
+
+      # Fail in case of changes outside of `data/birth-dates/*.txt`
+      - name: Restrict Changes
+        run: |
+          set -euo pipefail
+
+          BASE="${{ github.event.pull_request.base.sha }}"
+          HEAD="${{ github.event.pull_request.head.sha }}"
+
+          # List changed files between base and head:
+          CHANGED_FILES="$(git diff --name-only "$BASE" "$HEAD")"
+          echo -e "Changed files: \n${CHANGED_FILES}"
+
+          if [[ -z "${CHANGED_FILES}" ]]; then
+            exit 0
+          fi
+
+          # Find any changed files not in the allowed path:
+          DISALLOWED_FILES="$(echo "${CHANGED_FILES}" | grep -Ev '^data/birth-dates/[^/]+\.txt$' || true)"
+
+          if [[ -n "${DISALLOWED_FILES}" ]]; then
+            echo "::error::Disallowed changes detected!"
+            echo "Disallowed changes detected:" >> "$GITHUB_STEP_SUMMARY"
+            echo "${DISALLOWED_FILES}" >> "$GITHUB_STEP_SUMMARY"
+            echo "Only files directly under data/birth-dates/ with .txt extension may be edited." >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+
+          echo "All changes are within data/birth-dates/*.txt"
