@@ -1,4 +1,4 @@
-name: Check birthdates
+name: Birthdate Check
 
 on:
   pull_request_target:
@@ -6,16 +6,27 @@ on:
       - "data/birth-dates/*.txt"
 
 concurrency: # Only one job per PR at a time
-  group: pr-${{ github.event.pull_request.number }}
+  group: pr-${{ github.event.pull_request.number }}-b
   cancel-in-progress: true # cancel any in-progress runs when a new commit is pushed
 
 permissions:
   contents: read
 
 jobs:
-  check:
+  wait-and-check: # Wait for "Restrict Changes" to complete, then run the check
     runs-on: ubuntu-latest
     steps:
+      # First, wait for the "Restrict Changes" check to complete successfully:
+      - name: Wait for "Restrict Changes" check to complete
+        uses: lewagon/wait-on-check-action@v1.3.3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          check-name: "Restrict Changes"
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 5
+          allowed-conclusions: success
+
+      # Then checkout the PR files:
       - name: Check out PR
         uses: actions/checkout@v4
         with:
