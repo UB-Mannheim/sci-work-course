@@ -23,19 +23,7 @@
     * [Send us a pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) on GitHub (and check back in a couple of days to see if there has been any activities associated with it)
     * 🎉 Done! You have gotten your first pull request accepted! 🎉
 
-See the exercise materials for more information. You can now return to ILIAS and continue with the other tasks. If you want to go a bit further there is a more advanced but _optional_ exercise as well.
-
-3. **Task: Git and GitHub workflow (advanced, _optional_)**
-    * Fork PalMA from https://github.com/UB-Mannheim/PalMA
-    * Clone your newly forked repository to your computer
-    * Check that you have configured username and email in Git
-    * Create a new branch
-        * a) Add a new language in directory `locale` (copy directory of English version and paste it to a new directory).
-        * b) Edit an existing language in the directory `locale`
-    * Translate some texts and adjust the header
-    * commit and **sign off** your changes, than push them to your fork
-    * Send us a pull request on GitHub
-    * 🎉 Done! You will be immortalized in the changelog if you complete this part with a substantial contribution! 🎉
+See the exercise materials for more information. You can now return to ILIAS and continue with the other tasks.
 
 ## Documentation for LaTeX installation
 
