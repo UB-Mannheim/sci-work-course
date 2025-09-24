@@ -68,13 +68,17 @@ receivedLine="$(
   | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
 )"
 
-# Compare:
+# Compare and give feedback (to GitHub Actions summary):
 if [[ "$receivedLine" == "$expectedLine" ]]; then
-  echo "**${basefile}** – ✅ correct" >> "$GITHUB_STEP_SUMMARY"
+  echo "**${basefile}: ✅ correct"** >> "$GITHUB_STEP_SUMMARY"
+  echo -e "Expected: \`$expectedLine\` \n" >> "$GITHUB_STEP_SUMMARY"
+  echo -e "Received: \`$receivedLine\` \n" >> "$GITHUB_STEP_SUMMARY"
 else
   echo "::error file=${file}::Content does not match expected line"
-  echo -e "**${basefile}** – ❌ mismatch \n" >> "$GITHUB_STEP_SUMMARY"
-  echo -e "**Expected:** \`$expectedLine\` \n" >> "$GITHUB_STEP_SUMMARY"
-  echo -e "**Received:** \`$receivedLine\` \n" >> "$GITHUB_STEP_SUMMARY"
+  echo "::error file=${file}::Expected: \`$expectedLine\` \n"
+  echo "::error file=${file}::Received: \`$receivedLine\` \n"
+  echo -e "**${basefile}: ❌ mismatch** \n" >> "$GITHUB_STEP_SUMMARY"
+  echo -e "Expected: \`$expectedLine\` \n" >> "$GITHUB_STEP_SUMMARY"
+  echo -e "Received: \`$receivedLine\` \n" >> "$GITHUB_STEP_SUMMARY"
   exit 1
 fi
