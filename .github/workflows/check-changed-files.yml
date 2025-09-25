@@ -10,7 +10,7 @@ concurrency: # Only one job per PR at a time
 
 jobs:
   check-changed-files:
-    name: Restrict Changes
+    name: Check for Changes Outside Allowed Path
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -35,7 +35,7 @@ jobs:
           git fetch --no-tags --depth=1 base "$BASE_SHA"
 
       # Fail in case of changes outside of `data/birth-dates/*.txt`
-      - name: Restrict Changes
+      - name: Check Changed Files
         run: |
           set -euo pipefail
 

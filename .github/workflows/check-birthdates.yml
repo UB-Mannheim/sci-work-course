@@ -12,20 +12,32 @@ concurrency: # Only one job per PR at a time
 permissions:
   contents: read
 
+# Wait for "Check for Changes Outside Allowed Path" to complete, then run the birthday check
 jobs:
-  wait-and-check: # Wait for "Restrict Changes" to complete, then run the check
+  wait-for-changed-files-check:
     runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.wait-for-changed-files-check.outputs.should_run }}
     steps:
-      # First, wait for the "Restrict Changes" check to complete successfully:
-      - name: Wait for "Restrict Changes" check to complete
+      # First, wait for the check to complete successfully:
+      - name: Wait for "Check for Changes Outside Allowed Path" check to complete
         uses: lewagon/wait-on-check-action@v1.3.3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
-          check-name: "Restrict Changes"
+          check-name: "Check for Changes Outside Allowed Path"
+          # running-workflow-name: "Restrict Changes"
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 5
           allowed-conclusions: success
+      - name: Set output
+        id: wait-for-changed-files-check
+        run: echo "should_run=true" >> "$GITHUB_OUTPUT"
 
+  check-birthdates:
+    needs: wait-for-changed-files-check
+    if: ${{ needs.wait-for-changed-files-check.outputs.should_run == 'true' }}
+    runs-on: ubuntu-latest
+    steps:
       # Then checkout the PR files:
       - name: Check out PR
         uses: actions/checkout@v4
