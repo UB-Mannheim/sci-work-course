@@ -25,13 +25,14 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 1 # no need for full history
 
-      - name: Fetch PR head commit
+      # Fetch the base SHA to compare against:
+      - name: Fetch base SHA
         run: |
           set -euo pipefail
-          HEAD_SHA='${{ github.event.pull_request.head.sha }}'
-          HEAD_REPO='${{ github.event.pull_request.head.repo.clone_url }}'
-          git remote add head "$HEAD_REPO"
-          git fetch --no-tags --depth=1 head "$HEAD_SHA"
+          BASE_REPO='${{ github.event.pull_request.base.repo.clone_url }}'
+          BASE_SHA='${{ github.event.pull_request.base.sha }}'
+          git remote add base "$BASE_REPO"
+          git fetch --no-tags --depth=1 base "$BASE_SHA"
 
       # Fail in case of changes outside of `data/birth-dates/*.txt`
       - name: Restrict Changes
