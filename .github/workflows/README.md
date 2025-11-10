@@ -20,3 +20,11 @@ This directory contains GitHub Actions workflows used to automate various tasks 
 | **Description:** | This workflow is triggered by pull requests and ensures that only allowed files (files under `data/birth-dates/*.txt`) are changed. If any other files are modified, the workflow fails. |
 | **Trigger:** | `pull_request_target` with types: opened, synchronize, reopened, ready_for_review |
 | **Used files:** | - |
+
+
+### `label-semester.yml`
+| **Name:** | Add Semester Label |
+| --- |--- |
+| **Description:** | This workflow is triggered by pull requests and automatically adds a label indicating the current semester (e.g., `FSS25` or `HWS25/26`) to the pull request. This helps in organizing and tracking pull requests based on the semester they were created in. |
+| **Trigger:** | `pull_request` with types: opened |
+| **Used files:** | - |

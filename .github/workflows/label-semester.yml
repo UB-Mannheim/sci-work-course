@@ -1,0 +1,76 @@
+name: Add Semester Label
+
+on:
+  pull_request:
+    types: [opened]
+
+concurrency: # Only one job per PR at a time
+  group: pr-${{ github.event.pull_request.number }}-c
+  cancel-in-progress: true # cancel any in-progress runs when a new commit is pushed
+
+jobs:
+  label-semester:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+
+    steps:
+      - name: Label PR based on time of year
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            // Get PR creation date and parse to Date object (UTC):
+            const prCreatedAt = new Date(context.payload.pull_request.created_at);
+            const FullYear = prCreatedAt.getUTCFullYear();
+            const year = FullYear % 100; // 2025 -> 25
+            const month = prCreatedAt.getUTCMonth() + 1;
+
+            // Decide label:
+            let label = '';
+            if ((month >= 8 && month <= 12) || month === 1) { // HWS
+              // August (8) - December (12) or January (1)
+              label = `HWS${year}/${year + 1}`;
+            } else { // FSS
+              // February (2) - July (7)
+              label = `FSS${year}`;
+            }
+
+            console.log(`PR date: ${prCreatedAt.toISOString()}, Selecting label: ${label}`);
+
+            try {
+              // Try to get the label, create it if it doesn't exist:
+              try {
+                await github.rest.issues.getLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  name: label
+                });
+              } catch (error) {
+                if (error.status === 404) {
+                  console.log(`Label ${label} not found, creating...`);
+                  await github.rest.issues.createLabel({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    name: label,
+                    color: 'cfd3d7',
+                    description: `Semester ${label}`
+                  });
+                } else {
+                  throw error;
+                }
+              }
+
+              // Add label to PR:
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                labels: [label]
+              });
+
+              console.log(`Added label "${label}" to PR #${context.payload.pull_request.number}`);
+            } catch (error) {
+              console.error(`Error labeling PR: ${error.message}`);
+              throw error;
+            }
