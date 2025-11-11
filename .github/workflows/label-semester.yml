@@ -1,12 +1,16 @@
 name: Add Semester Label
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened]
 
 concurrency: # Only one job per PR at a time
   group: pr-${{ github.event.pull_request.number }}-c
   cancel-in-progress: true # cancel any in-progress runs when a new commit is pushed
+
+permissions:
+  pull-requests: write
+  contents: read
 
 jobs:
   label-semester:
