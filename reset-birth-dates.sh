@@ -3,7 +3,7 @@
 if [ $# -gt 0 ]; then
     RESET_COMMIT="$1"
 else
-    RESET_COMMIT="016dce962e682cca82efc481a6b8974ed1c3c5b5"
+    RESET_COMMIT="bc0238e371780fb0a294e62c5f2daa2b32c82154"
 fi
 set -x
 git pull --rebase origin
