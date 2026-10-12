@@ -26,18 +26,19 @@ jobs:
           script: |
             // Get PR creation date and parse to Date object (UTC):
             const prCreatedAt = new Date(context.payload.pull_request.created_at);
-            const FullYear = prCreatedAt.getUTCFullYear();
-            const year = FullYear % 100; // 2025 -> 25
+            const fullYear = prCreatedAt.getUTCFullYear();
             const month = prCreatedAt.getUTCMonth() + 1;
+            const shortYear = (value) => String(value % 100).padStart(2, '0');
 
             // Decide label:
             let label = '';
-            if ((month >= 8 && month <= 12) || month === 1) { // HWS
-              // August (8) - December (12) or January (1)
-              label = `HWS${year}/${year + 1}`;
+            if (month === 1) { // HWS started in the previous calendar year
+              label = `HWS${shortYear(fullYear - 1)}/${shortYear(fullYear)}`;
+            } else if (month >= 8) { // HWS starts in August
+              label = `HWS${shortYear(fullYear)}/${shortYear(fullYear + 1)}`;
             } else { // FSS
               // February (2) - July (7)
-              label = `FSS${year}`;
+              label = `FSS${shortYear(fullYear)}`;
             }
 
             console.log(`PR date: ${prCreatedAt.toISOString()}, Selecting label: ${label}`);
