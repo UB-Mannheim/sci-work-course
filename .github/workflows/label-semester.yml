@@ -1,5 +1,6 @@
 name: Add Semester Label
 
+# SECURITY: Never check out, source, or execute the PR revision in this workflow. It may only be inspected as Git data.
 on:
   pull_request_target:
     types: [opened]
@@ -8,9 +9,8 @@ concurrency: # Only one job per PR at a time
   group: pr-${{ github.event.pull_request.number }}-c
   cancel-in-progress: true # cancel any in-progress runs when a new commit is pushed
 
-permissions:
-  pull-requests: write
-  contents: read
+# Deny permissions by default; the single job receives only what it needs.
+permissions: {}
 
 jobs:
   label-semester:
