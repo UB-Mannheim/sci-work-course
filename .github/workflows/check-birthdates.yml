@@ -38,31 +38,29 @@ jobs:
     if: ${{ needs.wait-for-changed-files-check.outputs.should_run == 'true' }}
     runs-on: ubuntu-latest
     steps:
-      # Then checkout the PR files:
-      - name: Check out PR
+      # Check out only the trusted base commit. The PR's files are never placed
+      # in the working tree of this privileged pull_request_target workflow.
+      - name: Check out trusted base
         uses: actions/checkout@v4
         with:
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-          ref: ${{ github.event.pull_request.head.ref }}
-          fetch-depth: 1 # no need for full history
+          ref: ${{ github.event.pull_request.base.sha }}
+          fetch-depth: 1
+          persist-credentials: false
 
-      # Always use the BASE branch's trusted files:
-      - name: Use base branch script and answer key
+      # Fetch the PR commit into Git's object database without checking it out.
+      - name: Fetch PR head as data
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
         run: |
           set -euo pipefail
-          BASE_SHA='${{ github.event.pull_request.base.sha }}'
-          git fetch --no-tags --depth=1 origin "$BASE_SHA"
-          git show "$BASE_SHA:.github/workflows/validate_birthdates.sh" > .github/workflows/validate_birthdates.sh
-          git show "$BASE_SHA:.github/workflows/birthdates" > .github/workflows/birthdates
-          chmod +x .github/workflows/validate_birthdates.sh
+          git fetch --no-tags --depth=1 origin "refs/pull/${PR_NUMBER}/head"
 
-      - name: Fetch PR head commit
-        run: |
-          set -euo pipefail
-          HEAD_SHA='${{ github.event.pull_request.head.sha }}'
-          HEAD_REPO='${{ github.event.pull_request.head.repo.clone_url }}'
-          git remote add head "$HEAD_REPO"
-          git fetch --no-tags --depth=1 head "$HEAD_SHA"
+          ACTUAL_HEAD="$(git rev-parse FETCH_HEAD)"
+          if [[ "$ACTUAL_HEAD" != "$EXPECTED_HEAD" ]]; then
+            echo "::error::Fetched PR head does not match the triggering commit"
+            exit 1
+          fi
 
       - name: Validate changed files
         env:

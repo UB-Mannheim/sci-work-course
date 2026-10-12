@@ -8,31 +8,37 @@ concurrency: # Only one job per PR at a time
   group: pr-${{ github.event.pull_request.number }}-a
   cancel-in-progress: true # cancel any in-progress runs when a new commit is pushed
 
+permissions:
+  contents: read
+
 jobs:
   check-changed-files:
     name: Check for Changes Outside Allowed Path
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-
-      # Check out the PR files:
-      - name: Check Out PR
+      # Check out only the trusted base commit. The PR's files are never placed
+      # in the working tree of this privileged pull_request_target workflow.
+      - name: Check out trusted base
         uses: actions/checkout@v4
         with:
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-          ref: ${{ github.event.pull_request.head.ref }}
-          fetch-depth: 1 # no need for full history
+          ref: ${{ github.event.pull_request.base.sha }}
+          fetch-depth: 1
+          persist-credentials: false
 
-      # Fetch the base SHA to compare against:
-      - name: Fetch base SHA
+      # Fetch the PR commit into Git's object database without checking it out.
+      - name: Fetch PR head as data
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
         run: |
           set -euo pipefail
-          BASE_REPO='${{ github.event.pull_request.base.repo.clone_url }}'
-          BASE_SHA='${{ github.event.pull_request.base.sha }}'
-          git remote add base "$BASE_REPO"
-          git fetch --no-tags --depth=1 base "$BASE_SHA"
+          git fetch --no-tags --depth=1 origin "refs/pull/${PR_NUMBER}/head"
+
+          ACTUAL_HEAD="$(git rev-parse FETCH_HEAD)"
+          if [[ "$ACTUAL_HEAD" != "$EXPECTED_HEAD" ]]; then
+            echo "::error::Fetched PR head does not match the triggering commit"
+            exit 1
+          fi
 
       # Fail in case of changes outside of `data/birth-dates/*.txt`
       - name: Check Changed Files
