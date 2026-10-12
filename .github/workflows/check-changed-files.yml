@@ -1,11 +1,11 @@
-name: Restrict Changes
+name: Validate Pull Request
 
 on:
   pull_request_target:
     types: [opened, synchronize, reopened, ready_for_review]
 
 concurrency: # Only one job per PR at a time
-  group: pr-${{ github.event.pull_request.number }}-a
+  group: pr-${{ github.event.pull_request.number }}-validation
   cancel-in-progress: true # cancel any in-progress runs when a new commit is pushed
 
 permissions:
@@ -68,3 +68,37 @@ jobs:
           fi
 
           echo "All changes are within data/birth-dates/*.txt"
+
+  check-birthdates:
+    needs: check-changed-files
+    runs-on: ubuntu-latest
+    steps:
+      # Check out only the trusted base commit. The PR's files are never placed
+      # in the working tree of this privileged pull_request_target workflow.
+      - name: Check out trusted base
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          fetch-depth: 1
+          persist-credentials: false
+
+      # Fetch the PR commit into Git's object database without checking it out.
+      - name: Fetch PR head as data
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin "refs/pull/${PR_NUMBER}/head"
+
+          ACTUAL_HEAD="$(git rev-parse FETCH_HEAD)"
+          if [[ "$ACTUAL_HEAD" != "$EXPECTED_HEAD" ]]; then
+            echo "::error::Fetched PR head does not match the triggering commit"
+            exit 1
+          fi
+
+      - name: Validate changed files
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: bash .github/workflows/validate_birthdates.sh
